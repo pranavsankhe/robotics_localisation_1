@@ -7,7 +7,7 @@ def main():
 	# assigning a prior probablity that is unifrom across the state space.
 	prior = float(1 / (size*size))
 	P = [[prior for j in range(size)]  for i in range(size)]
-	
+
 	# getting the measurement values from the file 
 	path = '/Users/pranavsankhe/Downloads/ranges1.dat'
 	with open(path) as book:
@@ -66,11 +66,7 @@ def observe(P, r):
 	for i in range(len(P)):
 		temp  = []
 		for j in range(len(P[i])):
-			if (i <=2 or j >=54):
-				s = 0.25 * P[i][j]
-			else:
-				s = 0.75 * (P[i-3][ (j+3) ])
-				s = s + (0.25 * (P[i][j]))
+			
 			temp.append(s)
 		q.append(temp)
 	return 
